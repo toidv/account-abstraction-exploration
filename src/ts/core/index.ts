@@ -2,7 +2,7 @@ import { createSigner } from "./createSigner";
 import { parseEther } from "viem";
 import type { SendUserOperationResult } from "@alchemy/aa-core";
 
-const ADDR = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"; // replace with the adress you want to send SepoliaETH to, unless you want to send ETH to Vitalik :)
+const ADDR = "0x9Dd4fa34EbF2E39c304E1f2534a8A9B4951ad5d0"; // replace with the adress you want to send SepoliaETH to, unless you want to send ETH to Vitalik :)
 
 /**
  * @description Creates a smart contract account, and sends ETH to the specified address (could be an EOA or SCA)
@@ -10,7 +10,8 @@ const ADDR = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"; // replace with the a
  */
 export async function main() {
   const signer = await createSigner();
-
+  const counterfactualAddress = await signer.account.getAddress();
+  console.log("SCA address: ", counterfactualAddress)
   const amountToSend: bigint = parseEther("0.0001");
 
   const result: SendUserOperationResult = await signer.sendUserOperation({

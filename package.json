@@ -19,12 +19,14 @@
     "@alchemy/aa-ethers": "^0.1.0-alpha.17",
     "alchemy-sdk": "^2.9.0",
     "dotenv": "^16.0.3",
-    "ethers": "^6.5.1"
+    "ethers": "^6.5.1",
+    "lts": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
     "tslib": "^2.5.2",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4"
-  }
+  },
+  "repository": "git@github.com:alchemyplatform/creating-smart-contract-and-sending-userops.git"
 }

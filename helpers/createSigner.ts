@@ -5,7 +5,7 @@ import {
 } from "@alchemy/aa-core";
 import { privateKeyToAccount } from "viem/accounts";
 import { toHex } from "viem/utils";
-import { sepolia } from "viem/chains";
+import { polygon } from "viem/chains";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -29,7 +29,7 @@ export default async function createSigner() {
     getAddress: async () => account.address,
   };
 
-  const chain = sepolia;
+  const chain = polygon;
   const provider = new SmartAccountProvider(
     ALCHEMY_API_URL,
     ENTRYPOINT_ADDRESS,
